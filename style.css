@@ -60,3 +60,13 @@ img{
   outline:solid;
   outline-color: black;
 }
+
+canvas{
+	outline:dashed;
+	outline-color:black;
+	outline-width: thin;
+}
+
+button{
+	padding:50px;
+}

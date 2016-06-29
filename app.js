@@ -7,6 +7,8 @@ function makeRandomNum(){
 var clicks = 0;
 var allImages = [];
 var currentIndices = [];
+var nameData = [];
+var clickedData = [];
 
 var one = document.getElementById('one');
 var two = document.getElementById('two');
@@ -100,3 +102,36 @@ function handleImageClicks(){
 }
 images.addEventListener('click', handleImageClicks);
 displayImages();
+
+////NEED TO FIGURE OUT HOW TO POPULATE THESE ARRAYS TO PUT IN CHART, BUT LET'S TRY AND GET A CHART WORKING FIRST
+function makeChartDataArrays(){
+  for(var i = 0; i < allImages.length; i++){
+    nameData[i] = allImages[i].name;
+    clickedData[i] = allImages[i].clicked;
+  }
+};
+
+makeChartDataArrays();
+
+//MAKING A CHART
+
+var chartData = {
+  labels: nameData,
+  datasets:[
+    {
+      fillColor: 'red',
+      strokeColor: 'black',
+      data: clickedData,
+    }
+  ]
+};
+function drawChart(){
+  var chart = document.getElementById('chart').getContext('2d');
+  new Chart.Bar(chart,{
+    data: chartData,
+  });
+};
+
+document.getElementById('button').addEventListener('click', function(){
+  drawChart();
+});
