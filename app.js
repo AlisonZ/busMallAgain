@@ -91,6 +91,7 @@ function handleImageClicks(){
     if(event.target.alt === allImages[i].name){
       allImages[i].clicked += 1;
       console.log('The product ' + event.target.alt + ' has been clicked ' + allImages[i].clicked + ' times.');
+      // clickedData[i] = allImages[i].clicked;
     }
   }
   if (clicks > 4){
@@ -111,7 +112,7 @@ function makeChartDataArrays(){
   }
 };
 
-makeChartDataArrays();
+
 
 //MAKING A CHART
 
@@ -121,11 +122,12 @@ var chartData = {
     {
       fillColor: 'red',
       strokeColor: 'black',
-      data: clickedData,
+      data: clickedData
     }
   ]
 };
 function drawChart(){
+  makeChartDataArrays();
   var chart = document.getElementById('chart').getContext('2d');
   new Chart.Bar(chart,{
     data: chartData,
