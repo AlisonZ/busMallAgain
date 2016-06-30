@@ -68,5 +68,16 @@ canvas{
 }
 
 button{
-	padding:50px;
+	background: #888;
+	  /*border: none;
+	  border-radius: 8px;*/
+	  clear: both;
+	  color: #ffffff;
+	  cursor: pointer;
+	  display: none;
+	  font-size: 20px;
+	  padding:30px;
+	  /*margin: 0 auto 30px;
+	  text-align: center;
+	  text-decoration: none;*/
 }

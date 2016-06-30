@@ -9,6 +9,8 @@ var allImages = [];
 var currentIndices = [];
 var nameData = [];
 var clickedData = [];
+var percentageArray = [];
+// var displayed = [];
 
 var one = document.getElementById('one');
 var two = document.getElementById('two');
@@ -44,6 +46,18 @@ var usb = new Image ('usb', 'assets/usb.png');
 var waterCan = new Image ('waterCan', 'assets/water-can.jpg');
 var wineGlass = new Image ('wineGlass', 'assets/wine-glass.jpg');
 
+function checkLocalStorage(){
+  if(localStorage.clicks){
+    console.log('there is stuff in the local storage');
+    var parsedNames = JSON.parse(localStorage.getItem('names'));
+    var parsedClicks = JSON.parse(localStorage.getItem('clicks'));
+    // var parsedDisplayed = JSON.parse(localStorage.getItem('displays'));
+    for (var i = 0; i < allImages.length; i++){
+      allImages[i].clicked += parsedClicks[i];
+    }
+  }
+}
+checkLocalStorage();
 //NOW GOING TO ASSIGN SOME RANDOM NUMBERS TO
 function assignIndices(){
 
@@ -69,6 +83,7 @@ function assignIndices(){
   return currentIndices;
 }
 
+//assigns location src to randomly generated indices, gives each an alt attribute and tallies total times displayed
 function displayImages(){
   assignIndices();
   // console.log('the display function worked');
@@ -85,25 +100,34 @@ function displayImages(){
   allImages[currentIndices[2]].displayed += 1;
 }
 
+//when clicked number of clicks increases
 function handleImageClicks(){
   clicks += 1;
   for(var i = 0; i < allImages.length; i++){
     if(event.target.alt === allImages[i].name){
       allImages[i].clicked += 1;
-      console.log('The product ' + event.target.alt + ' has been clicked ' + allImages[i].clicked + ' times.');
+      // console.log('The product ' + event.target.alt + ' has been clicked ' + allImages[i].clicked + ' times.');
     }
   }
-  if (clicks > 4){
-    console.log('got to 5 clicks');
+  setDatatoLocalStorage();
+
+  if (clicks > 24){
+    //so this is remove the Event Listener for clicks and the handle Image clicks
+    images.removeEventListener('click', handleImageClicks);
+    console.log('event listener is removed');
+    //this is not working... still need a button to appear when reach 25 clicks
+    alert('Thanks for completing the survey!');
+    button.style.display = 'block';
   }
   else{
     displayImages();
   }
-}
+};
+
 images.addEventListener('click', handleImageClicks);
 displayImages();
 
-////NEED TO FIGURE OUT HOW TO POPULATE THESE ARRAYS TO PUT IN CHART, BUT LET'S TRY AND GET A CHART WORKING FIRST
+//assigns clicked numbers and names to global arrays to be used in populating chart
 function makeChartDataArrays(){
   for(var i = 0; i < allImages.length; i++){
     nameData[i] = allImages[i].name;
@@ -111,7 +135,32 @@ function makeChartDataArrays(){
   }
 };
 
-makeChartDataArrays();
+//stringifies the names and clicks
+function setDatatoLocalStorage(){
+  makeChartDataArrays();
+  // console.log(nameData);
+  localStorage.setItem('names', JSON.stringify(nameData));
+  localStorage.setItem('clicks', JSON.stringify(clickedData));
+  // localStorage.setItem('displays', JSON.stringify(displayed));
+};
+
+// retrieves the items
+function harvestLocalStorage(){
+  // console.log('i am harvesting stuff for making charts');
+  var parsedNames = JSON.parse(localStorage.getItem('names'));
+  var parsedClicks = JSON.parse(localStorage.getItem('clicks'));
+  // var parsedDisplayed = JSON.parse(localStorage.getItem('displays'));
+  // console.log(parsedNames);
+  // console.log(parsedClicks);
+}
+
+// function makePercentages(){
+//   for (var i = 0; i < allImages.length; i++){
+//     var percentage = allImages[i].clicked / allImages[i].displayed;
+//     percentageArray.push(percentage);
+//   }
+// }
+// makePercentages();
 
 //MAKING A CHART
 
@@ -121,11 +170,13 @@ var chartData = {
     {
       fillColor: 'red',
       strokeColor: 'black',
-      data: clickedData,
+      data: clickedData
     }
   ]
 };
 function drawChart(){
+  makeChartDataArrays();
+
   var chart = document.getElementById('chart').getContext('2d');
   new Chart.Bar(chart,{
     data: chartData,
