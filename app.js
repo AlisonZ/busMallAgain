@@ -110,15 +110,20 @@ function handleImageClicks(){
     }
   }
   setDatatoLocalStorage();
+
   if (clicks > 24){
     //so this is remove the Event Listener for clicks and the handle Image clicks look up mdn docs on how to do this
+    images.removeEventListener('click', handleImageClicks);
+    console.log('event listener is removed');
+  }
+    // removeClickEventListener();
     //make the button appear
 
-  }
   else{
     displayImages();
   }
-}
+};
+
 images.addEventListener('click', handleImageClicks);
 displayImages();
 
