@@ -112,13 +112,12 @@ function handleImageClicks(){
   setDatatoLocalStorage();
 
   if (clicks > 24){
-    //so this is remove the Event Listener for clicks and the handle Image clicks look up mdn docs on how to do this
+    //so this is remove the Event Listener for clicks and the handle Image clicks
     images.removeEventListener('click', handleImageClicks);
     console.log('event listener is removed');
+    //this is not working... still need a button to appear when reach 25 clicks
+    document.getElementById('button', 'active');
   }
-    // removeClickEventListener();
-    //make the button appear
-
   else{
     displayImages();
   }
