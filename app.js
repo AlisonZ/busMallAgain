@@ -9,6 +9,8 @@ var allImages = [];
 var currentIndices = [];
 var nameData = [];
 var clickedData = [];
+var percentageArray = [];
+// var displayed = [];
 
 var one = document.getElementById('one');
 var two = document.getElementById('two');
@@ -49,6 +51,7 @@ function checkLocalStorage(){
     console.log('there is stuff in the local storage');
     var parsedNames = JSON.parse(localStorage.getItem('names'));
     var parsedClicks = JSON.parse(localStorage.getItem('clicks'));
+    // var parsedDisplayed = JSON.parse(localStorage.getItem('displays'));
     for (var i = 0; i < allImages.length; i++){
       allImages[i].clicked += parsedClicks[i];
     }
@@ -108,7 +111,9 @@ function handleImageClicks(){
   }
   setDatatoLocalStorage();
   if (clicks > 24){
-    // console.log('got to 5 clicks');
+    //so this is remove the Event Listener for clicks and the handle Image clicks look up mdn docs on how to do this
+    //make the button appear
+
   }
   else{
     displayImages();
@@ -131,6 +136,7 @@ function setDatatoLocalStorage(){
   // console.log(nameData);
   localStorage.setItem('names', JSON.stringify(nameData));
   localStorage.setItem('clicks', JSON.stringify(clickedData));
+  // localStorage.setItem('displays', JSON.stringify(displayed));
 };
 
 // retrieves the items
@@ -138,10 +144,18 @@ function harvestLocalStorage(){
   // console.log('i am harvesting stuff for making charts');
   var parsedNames = JSON.parse(localStorage.getItem('names'));
   var parsedClicks = JSON.parse(localStorage.getItem('clicks'));
+  // var parsedDisplayed = JSON.parse(localStorage.getItem('displays'));
   // console.log(parsedNames);
   // console.log(parsedClicks);
 }
 
+// function makePercentages(){
+//   for (var i = 0; i < allImages.length; i++){
+//     var percentage = allImages[i].clicked / allImages[i].displayed;
+//     percentageArray.push(percentage);
+//   }
+// }
+// makePercentages();
 
 //MAKING A CHART
 
