@@ -32,7 +32,7 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	/*list-style: none;*/
 }
 blockquote, q {
 	quotes: none;
@@ -48,17 +48,77 @@ table {
 }
 /*End of Style reset*/
 
-nav{
-  height:200px;
-  width:960px;
-  background-color: #888888;
+header{
+  height:350px;
+	background-color: #0B4B74;
+	font-family: 'Poppins', sans-serif;
+}
+
+.header_image{
+	width:600px;
+	height:300px;
+	outline-color: none;
+	padding-left: 800px;
+}
+#intro{
+	padding-left: 200px;
+	padding-top: 50px;
+	color: #FFEFD8;
+	position:absolute;
+}
+
+h1{
+font-size: 100px;
+}
+
+#tagline{
+padding-top: 15px;
+text-align: center;
+font-style: italic;
+}
+
+#instructions{
+height: 200px;
+width: 960px;
+background-color:green;
+margin: 0 auto;
+background-color: #888;
+font-family: Helvetica;
+}
+
+#instructions h2{
+	font-size: 30px;
+	text-align: center;
+	padding-bottom: 15px;
+	text-decoration: underline;
+}
+
+#instructions p{
+	padding-bottom: 10px;
+}
+
+li{
+	list-style: decimal inside;
+}
+
+ol{
+	margin: 0 0 0 10px;
+}
+
+#images{
+	height: 500px;
+	width: 960px;
+	margin: 0 auto;
+	outline: solid;
+	outline-color: green;
 }
 
 img{
   height:300px;
   width:200px;
   outline:solid;
-  outline-color: black;
+  outline-color: #0B4B74;
+	padding-top:22px;
 }
 
 canvas{
