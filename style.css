@@ -47,6 +47,9 @@ table {
 	border-spacing: 0;
 }
 /*End of Style reset*/
+body{
+	/*background-color: red;*/
+}
 
 header{
   height:350px;
@@ -79,7 +82,7 @@ font-style: italic;
 
 #instructions{
 height: 200px;
-width: 960px;
+width: 1100px;
 background-color:green;
 margin: 0 auto;
 background-color: #888;
@@ -106,19 +109,25 @@ ol{
 }
 
 #images{
-	height: 500px;
-	width: 960px;
+	padding-top: 30px;
+	height: 424px;
+	width: 1100px;
 	margin: 0 auto;
-	outline: solid;
-	outline-color: green;
 }
 
 img{
-  height:300px;
-  width:200px;
+  height:400px;
+  width:340px;
   outline:solid;
-  outline-color: #0B4B74;
-	padding-top:22px;
+  outline-color: black;
+}
+
+img:first-child{
+	margin-right: 34px;
+}
+
+img:last-child{
+	margin-left: 34px;
 }
 
 canvas{
