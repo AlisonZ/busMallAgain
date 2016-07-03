@@ -48,7 +48,7 @@ table {
 }
 /*End of Style reset*/
 body{
-	background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-5-full.jpg);
+	background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTDTlF2qnNSeD_b7H1I0yVOGi4B4Vi9XL0h0bX2_6s08Ahdyuqs);
 }
 
 header{
@@ -86,7 +86,7 @@ h1{
 	height: 200px;
 	width: 900px;
 	margin: 0 auto;
-	background-color: #FFEFD8;
+	background-color: #78BFBF;
 	font-family: Helvetica;
 	border-radius: 16px;
 }
@@ -135,16 +135,16 @@ img:last-child{
 }
 
 button{
-	background:  #0B4B74;
+	background: #78BFBF;
 	border: none;
-	border-radius: 8px;
+	border-radius: 16px;
 	clear: both;
-	color: #ffffff;
+	color: #FFEFD8;
 	cursor: pointer;
 	display: none;
 	font-size: 20px;
 	padding:30px;
-	/*margin: 0 auto 30px;
-	text-align: center;
+	margin: 0 auto;
+	/*text-align: center;
 	text-decoration: none;*/
 }
