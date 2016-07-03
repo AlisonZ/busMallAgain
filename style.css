@@ -48,21 +48,23 @@ table {
 }
 /*End of Style reset*/
 body{
-	/*background-color: red;*/
+	background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-5-full.jpg);
 }
 
 header{
   height:350px;
 	background-color: #0B4B74;
 	font-family: 'Poppins', sans-serif;
+	margin-bottom: 50px;
 }
 
 .header_image{
 	width:600px;
 	height:300px;
-	outline-color: none;
+	outline-color: #0B4B74;
 	padding-left: 800px;
 }
+
 #intro{
 	padding-left: 200px;
 	padding-top: 50px;
@@ -71,22 +73,22 @@ header{
 }
 
 h1{
-font-size: 100px;
+	font-size: 100px;
 }
 
 #tagline{
-padding-top: 15px;
-text-align: center;
-font-style: italic;
+	padding-top: 15px;
+	text-align: center;
+	font-style: italic;
 }
 
 #instructions{
-height: 200px;
-width: 1100px;
-background-color:green;
-margin: 0 auto;
-background-color: #888;
-font-family: Helvetica;
+	height: 200px;
+	width: 900px;
+	margin: 0 auto;
+	background-color: #FFEFD8;
+	font-family: Helvetica;
+	border-radius: 16px;
 }
 
 #instructions h2{
@@ -98,10 +100,12 @@ font-family: Helvetica;
 
 #instructions p{
 	padding-bottom: 10px;
+	margin-left: 50px;
 }
 
 li{
 	list-style: decimal inside;
+	margin-left: 50px;
 }
 
 ol{
@@ -110,7 +114,7 @@ ol{
 
 #images{
 	padding-top: 30px;
-	height: 424px;
+	height: 430px;
 	width: 1100px;
 	margin: 0 auto;
 }
@@ -130,23 +134,17 @@ img:last-child{
 	margin-left: 34px;
 }
 
-canvas{
-	outline:dashed;
-	outline-color:black;
-	outline-width: thin;
-}
-
 button{
-	background: #888;
-	  /*border: none;
-	  border-radius: 8px;*/
-	  clear: both;
-	  color: #ffffff;
-	  cursor: pointer;
-	  display: none;
-	  font-size: 20px;
-	  padding:30px;
-	  /*margin: 0 auto 30px;
-	  text-align: center;
-	  text-decoration: none;*/
+	background:  #0B4B74;
+	border: none;
+	border-radius: 8px;
+	clear: both;
+	color: #ffffff;
+	cursor: pointer;
+	display: none;
+	font-size: 20px;
+	padding:30px;
+	/*margin: 0 auto 30px;
+	text-align: center;
+	text-decoration: none;*/
 }

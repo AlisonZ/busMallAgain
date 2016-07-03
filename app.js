@@ -168,9 +168,42 @@ var chartData = {
   labels: nameData,
   datasets:[
     {
-      fillColor: 'red',
-      strokeColor: 'black',
-      data: clickedData
+      data: clickedData,
+      label:'Number of Times Clicked',
+      lineWidth: 5,
+      strokeColor: 'blue',
+      options:{
+        scales:{
+          xAxes:[{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true
+          }],
+        }
+      },
+      backgroundColor: [
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+        '#FFEFD8',
+        '#0B4B74',
+      ]
     }
   ]
 };
